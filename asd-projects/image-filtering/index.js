@@ -5,9 +5,9 @@ $(document).ready(function(){
 
     // TODO: Call your apply function(s) here
     // applyFilter(reddify);
-    applyFilterNoBackground(reddify);
-    applyFilterNoBackground(decreaseBlue);
-    applyFilter(increaseGreenByBlue);
+    // applyFilterNoBackground(reddify);
+    applyFilterNoBackground(invertImage);
+    // applyFilter(increaseGreenByBlue);
 
 
 
@@ -68,6 +68,20 @@ function decreaseBlue(array) {
 
 function increaseGreenByBlue(array) {
     array[GREEN] = keepInBounds(array[GREEN] + array[BLUE]);
+    return array;
+}
+
+function bumpAroundFilter(array) {
+    array[RED] = keepInBounds(array[RED] * 0.625);
+    array[GREEN] = keepInBounds(array[GREEN] * 1.25);
+    array[BLUE] = keepInBounds(array[BLUE] * 0.875);
+    return array;
+}
+
+function invertImage(array) {
+    array[RED] = 255 - array[RED];
+    array[GREEN] = 255 - array[GREEN];
+    array[BLUE] = 255 - array[BLUE];
     return array;
 }
 
