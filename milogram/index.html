@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--NOT VISIBLE TO THE USER-->
+<head>
+
+    <meta charset="UTF-8">
+    <title>MiloGram</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./javascript/brains.js"></script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+        .brand-font {
+            font-style: italic;
+        }
+        img {
+            width: 300px;
+            margin: 10px;
+        }
+        .caption {
+            margin-bottom: 30px;
+        }
+        .pic-container,
+        .dog-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .dog-div {
+            background-color: #eeccee;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        button {
+            background-color: #77eeee;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+
+<!--VISIBLE TO THE USER-->
+<body>
+
+    <h1 class="brand-font">MiloGram</h1>
+    <h5 class="brand-font">Sharing the World's Dogs</h5>
+
+    <!-- User Info -->
+    <div id="first-name"></div>
+    <div id="last-name"></div>
+    <div id="followers"></div>
+    <img id="profile-pic">
+
+    <!-- Image Container -->
+    <div class="pic-container">
+        <!-- Dog Photo 1 -->
+        <div class="dog-div">
+            <img src="https://www.rd.com/wp-content/uploads/2018/02/31_Adorable-Puppy-Pictures-that-Will-Make-You-Melt_496932463_Smit.jpg?fit=700,467" alt="">
+            <div id="likeCount1"></div>
+            <button id="likeBtn" onclick="likePhoto(1)">Like</button>
+            <p class="caption">The sweetest baby puppy you ever did see</p>
+        </div>
+
+        <!-- Dog Photo 2 -->
+        <div class="dog-div">
+            <img src="https://www.allthingsdogs.com/wp-content/uploads/2019/05/Cute-Puppy-Names.jpg" alt="">
+            <div id="likeCount2"></div>
+            <button id="likeBtn" onclick="likePhoto(2)">Like</button>
+            <p class="caption">Just snoozin'</p>
+        </div>
+
+        <!-- Dog Photo 3 -->
+        <div class="dog-div">
+            <img src="https://www.tinypetstube.com/wp-content/uploads/cute-puppy-picture-1.jpg" alt="">
+            <div id="likeCount3"></div>
+            <button id="likeBtn" onclick="likePhoto(3)">Like</button>
+            <p class="caption">Majestic boi</p>
+        </div>
+
+        <!-- Dog Photo 4 -->
+        <div class="dog-div">
+            <img src="https://www.zarias.com/wp-content/uploads/2015/12/61-cute-puppies.jpg" alt="">
+            <div id="likeCount4"></div>
+            <button id="likeBtn" onclick="likePhoto(4)">Like</button>
+            <p class="caption">Just cheesin'</p>
+        </div>
+
+        <!-- Dog Photo 5 -->
+        <div class="dog-div">
+            <img src="https://www.hearingdogs.org.uk/globalassets/blog/cute-corner/22-pups-bad-day-16/mabel-puppy-karen-rigg-flickr.jpg" alt="">
+            <div id="likeCount5"></div>
+            <button id="likeBtn" onclick="likePhoto(5)">Like</button>
+            <p class="caption">Does you gots any snackos?</p>
+        </div>
+    </div>
+</body>
+
+</html>
