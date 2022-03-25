@@ -61,8 +61,8 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
-
+			var pos = 0;
+			var speed = 10;
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -70,8 +70,11 @@
 			turn it around! 
 			*/
 			function update() {
-				
-
+				moveBoxTo(pos);
+				pos += speed;
+				if (pos > boardWidth) { 
+					speed *= -1;
+				}
 			};
 
 			/* 
