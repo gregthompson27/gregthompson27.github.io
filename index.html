@@ -1,117 +1,49 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Milo's Magnificent Website</title>
-        <style>
-            body {
-                background: #3460a1;
-                color: #f7f4f4;
-                padding: 10px;
-                font-family: arial;
-            }
-            #all-contents {
-                max-width: 800px;
-                margin: auto;
-            }
+  <head>
+    <title>Milo's Magnificent Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-            /* navv menu */
-            nav {
-                background: #aba24a;
-                margin: 0 auto;
-                display: flex;
-                padding: 10px;
-                margin-bottom: 20px;
-                border-radius: 10px;
-            }
-            h1 {
-                display: flex;
-                align-items: center;
-                color: #f7f4f4;
-                flex: 1;
-                margin: 0;
-            }
-            #nav-ul {
-                list-style-image: none;
-            }
-            .nav-li {
-                display: inline-block;
-                padding: 0 10px;
-            }
-            a {
-                text-decoration: none;
-                color: #f7f4f4;
-            }
+  <body>
+    <!-- Alll content goes here -->
+    <div id="all-contents">
+      <nav>
+        <h1>Milo's Menacing Website</h1>
+        <ul id="nav-ul">
+          <li class="nav-li">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="nav-li">
+            <a href="portfolio.html">Portfolio</a>
+          </li>
+        </ul>
+      </nav>
 
-            /* mainn container area beneath menu */
-            main {
-                background: #65abca;
-                display: flex;
-                color: #f7f4f4;
-                border-radius: 5px;
-                box-shadow: 3px 3px 8px #8888cc;
-            }
-            .sidebar {
-                margin-right: 25px;
-                padding: 10px;
-            }
-            .sidebar-img {
-                width: 200px;
-                border-radius: 25px;
-                border: 3px solid #aba24a;
-            }
-            .content {
-                flex: 1;
-                padding: 15px;
-            }
-            #interests {
-                border: 4px #ae4eae ridge;
-                padding: 8px;
-            }
-            h2, h3 {
-                margin: 0px;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <!-- Alll content goes here -->
-        <div id="all-contents"> 
-            <nav>
-                <h1>Milo's Menacing Website</h1>
-                <ul id="nav-ul">
-                    <li class="nav-li">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="portfolio.html">Portfolio</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <main>
-                <!-- Sidebarr section -->
-                <div class="sidebar">
-                    <img class="sidebar-img" src="img/Milo.jpeg" width="200px">
-                </div>
-
-                <!-- Content section -->
-                <div class="content">
-                    <h2>Mister Milo</h2>
-                    <p>Best Dog in the World</p>
-
-                    <!-- Interests section -->
-                    <div id="interests">
-                        <h3>Interests</h3>
-                        <ul>
-                            <li>Chasing Squirrels</li>
-                            <li>Splashing in Puddles</li>
-                            <li>Playing the Fetches</li>
-                            <li>Doing Yoga</li>
-                            <li>Being Super Annoying</li>
-                        </ul>
-                    </div>
-                </div>
-            </main>
+      <main>
+        <!-- Sidebarr section -->
+        <div class="sidebar">
+          <img class="sidebar-img" src="img/Milo.jpeg" width="200px" />
         </div>
-    </body>
+
+        <!-- Content section -->
+        <div class="content">
+          <h2>Mister Milo</h2>
+          <p>Best Dog in the World</p>
+
+          <!-- Interests section -->
+          <div id="interests">
+            <h3>Interests</h3>
+            <ul>
+              <li>Chasing Squirrels</li>
+              <li>Splashing in Puddles</li>
+              <li>Playing the Fetches</li>
+              <li>Doing Yoga</li>
+              <li>Being Super Annoying</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
