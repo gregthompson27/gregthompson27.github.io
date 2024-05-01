@@ -49,7 +49,7 @@
             const bodyB = active[j];
             
             // TODO 1: Calculate hit test components
-            
+            // 
             
               
             // TODO 2: Do collision check: how do we know if bodies are colliding?

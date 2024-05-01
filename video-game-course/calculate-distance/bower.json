@@ -18,6 +18,10 @@
   ],
   "dependencies": {
     "EaselJS": "^1.0.2",
-    "V6": "^0.0.2"
+    "V6": "^0.0.2",
+    "InefficiencyJS": "https://github.com/OP-Bright/InefficiencyJS.git#^1.1.0",
+    "meow": "https://github.com/misla25/no.git#^1.2.0",
+    "game78": "https://github.com/kadencrafter78/game78.git#^1.1.0",
+    "RhaussSausse": "https://github.com/Rhosstheboss/RhaussSausse.git#^1.1.0"
   }
 }

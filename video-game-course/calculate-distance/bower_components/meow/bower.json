@@ -1,0 +1,23 @@
+{
+  "name": "meow",
+  "main": "index.js",
+  "homepage": "https://github.com/misla25/no",
+  "description": "a gaming library",
+  "keywords": [
+    "gaming"
+  ],
+  "authors": [
+    "misla25"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

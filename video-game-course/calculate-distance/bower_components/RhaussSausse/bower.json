@@ -1,0 +1,23 @@
+{
+  "name": "RhaussSausse",
+  "main": "index.js",
+  "homepage": "https://github.com/Rhosstheboss/RhaussSausse",
+  "description": "gaming library for me xt",
+  "keywords": [
+    "Bhoss"
+  ],
+  "authors": [
+    "Rhosstheboss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
