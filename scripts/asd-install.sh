@@ -7,9 +7,9 @@ rm -rf .git*
 cd ..
 
 # create subfolders in project-instructions folder
-mv project-instructions fsd
+mv project-instructions temp-instructions
 mkdir project-instructions
-mv fsd project-instructions/
+mv temp-instructions project-instructions/
 mv asd/project-instructions project-instructions/asd/
 
 # move asd projects to root
