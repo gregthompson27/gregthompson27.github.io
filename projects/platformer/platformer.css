@@ -10,3 +10,43 @@ canvas {
 img {
   display: none;
 }
+#canvas {
+  float: left;
+}
+
+#functions-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  margin-left: 20px; /* Add spacing to the right of the canvas */
+  margin-right: 80px; /* Add spacing to the left of the canvas */
+  font-size: 1.2em; /* Increase font size */
+}
+
+#function-guidelines {
+  float: left;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  /* max-width: 400px; */
+  margin-bottom: 5px; /* Add spacing below the explanation */
+}
+
+.text-boxes {
+  clear: left;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-boxes textarea {
+  margin-top: 10px;
+  resize: vertical;
+}
+
+#function-inputs {
+  clear: left; /* Ensure it starts on a new line below #function-explanation */
+  margin-left: 0; /* Remove left margin */
+  /* margin-top: 20px; Add spacing below #function-explanation */
+  display: flex;
+  flex-direction: column;
+}

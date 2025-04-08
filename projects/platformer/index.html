@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>platformer</title>
-    <link href="platformer.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script src="setup.js"></script>
-    <script src="helpers.js"></script>
-    <script src="platformer.js"></script>
-  </head>
 
-  <body id="body">
-    <canvas id="canvas" width="1400" height="750"></canvas>
-    <img id="cannon" src="images/cannon.png" />
-    <img id="player" src="images/halle.png" />
-    <img id="projectile" src="images/projectile.png" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg" />
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>platformer</title>
+  <link href="platformer.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="setup.js"></script>
+  <script src="helpers.js"></script>
+  <script src="platformer.js"></script>
+</head>
+
+<body id="body">
+  <canvas id="canvas" width="900" height="750"></canvas>
+  <div id="functions-container">
+    <div id="function-guidelines">
+      <h2>Function Call Guidelines</h2>
+      <ul>
+        <li><strong style="font-size: larger;">createPlatform(x, y, width, height, color):</strong><br>Creates a
+          platform at the specified position
+          with
+          the given dimensions and optional color.</li><br>
+        <li><strong style="font-size: larger;">createCollectable(type, x, y, gravity, bounce):</strong><br>Adds a
+          collectable of the specified type
+          at
+          the given position with optional gravity and bounce values.</li><br>
+        <li><strong style="font-size: larger;">createCannon(side, position, delay):</strong><br>Places a cannon on the
+          specified side of the
+          screen,
+          at
+          the given position, with a delay between shots.</li>
+      </ul>
+
+      <p><strong>Examples:</strong></p>
+      <ul>
+        <li><code>createPlatform(500, 300, 200, 20, 'blue');</code></li>
+        <li><code>createCollectable('diamond', 200, 170, 0.5, 0.7);</code></li>
+        <li><code>createCannon('top', 200, 1000);</code></li>
+      </ul>
+    </div>
+
+    <div id="function-inputs">
+      <p style="font-style: italic; background-color: yellow;">Use the text boxes below to type function calls and test
+        them in your game.</p>
+      <label for="platform-input">Platform Function:</label>
+      <textarea id="platform-input" placeholder="e.g., createPlatform(500, 300, 200, 20, 'blue')"></textarea>
+      <button onclick="window.executeFunction('platform-input')">Submit Platform</button>
+      <br />
+      <label for="collectable-input">Collectable Function:</label>
+      <textarea id="collectable-input" placeholder="e.g., createCollectable('diamond', 200, 170, 0.5, 0.7)"></textarea>
+      <button onclick="window.executeFunction('collectable-input')">Submit Collectable</button>
+      <br />
+      <label for="cannon-input">Cannon Function:</label>
+      <textarea id="cannon-input" placeholder="e.g., createCannon('top', 200, 1000)"></textarea>
+      <button onclick="window.executeFunction('cannon-input')">Submit Cannon</button>
+    </div>
+  </div>
+
+  <img id="player" src="images/halle.png" />
+  <img id="projectile" src="images/projectile.png" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Test.svg" />
+</body>
+
 </html>
