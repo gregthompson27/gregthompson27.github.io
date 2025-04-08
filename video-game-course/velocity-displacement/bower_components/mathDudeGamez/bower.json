@@ -1,0 +1,23 @@
+{
+  "name": "mathDudeGamez",
+  "main": "index.js",
+  "homepage": "https://github.com/gregthompson27/mathDudeGamez",
+  "description": "a gaming library",
+  "keywords": [
+    "gaming"
+  ],
+  "authors": [
+    "gregthompson27"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
