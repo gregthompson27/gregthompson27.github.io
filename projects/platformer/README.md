@@ -1,264 +1,490 @@
-# Platformer
+# Platformer-neo
 
-### An intro to video game programming featuring Halle in a configurable platformer
+### An intro to video game programming featuring HalleBot in a configurable platformer
 
- **Table of Contents**
- 
-- [Objective](#objective)
-    - [Where to Code](#where-to-code)
-    - [Requirements and Grading](#requirements-and-grading)
-- [Functions](#functions)
+**Table of Contents**
+
+- [Before You Start](#before-you-start)
+  - [Objective](#objective)
+  - [Requirements and Grading](#requirements-and-grading)
+  - [Functions Recap](#functions-recap)
 - [Lesson Steps](#lesson-steps)
-    - [TODO 1: Platforms](#todo-1-platforms)
-    - [TODO 2: Collectables](#todo-2-collectables)
-    - [TODO 3: Commit Your Working Code](#todo-3-commit-your-working-code)
-    - [TODO 4: Cannons](#todo-4-cannons)
-    - [TODO 5: Make your level challenging](#todo-5-make-your-level-challenging)
-    - [TODO 6: Go Live](#todo-6-go-live)
+  - [Work Flow](#work-flow-how-to-navigate-through-the-lesson-steps)
+  - [TODO 0 : Preview Your Site](#todo-0-preview-your-site-with-live-server)
+  - [TODO 1: Enable the Grid](#todo-1-enable-the-grid)
+  - [TODO 2: Platforms](#todo-2-add-platforms)
+  - [TODO 3: Collectables](#todo-3-add-collectables)
+  - [TODO 4: Cannons](#todo-4-add-cannons)
+  - [TODO 5: Make your level challenging](#todo-5-make-your-level-challenging)
+  - [TODO 6: Go Live](#todo-6-go-live)
 
-# Objective 
-# (Must Read)
+<br><br>
 
-The goal is to design one level of a platformer game using the functions defined in the `js/factory` folder. DO NOT WORK IN THAT FOLDER. You will call these functions in the corresponding files located in the `js/init` folder to create the platforms, add cannons, and collectables that Halle must collect. To test your project, you will need to preview the `index.html` file found in your `platformer` folder.
+# Before You Start
 
-It's up to you to design a level that is challenging but doable. Consider <a href="http://phaser.io/examples/v2/category/tweens" target="_blank">tweening</a> platforms, cannons, and collectables for an additional challenge.
+## **Objective**
 
-## Where to Code?
+Get ready to bring your game design ideas to life! 🎮 In this project, you’ll design a playable level for a platformer game, using **JavaScript functions** to place platforms, collectables, and cannons that make gameplay exciting and challenging.
 
-Open up your `platformer` folder. Then, open up 3 files:
+You’ll be learning to:
 
-1. `js/init/platform.js`: Follow the instructions outlined in the file to design all required platforms for the game level.
-2. `js/init/cannon.js`: Follow the instructions outlined in the file to design all required cannons for the game level.
-3. `js/init/collectable.js`: Follow the instructions outlined in the file to design all required collectables for the game level.
+- **Call functions** with specific values (arguments) to position game elements precisely.
+- **Think like a game designer** as you create a level that’s both fun and challenging for players.
 
-You see instructions on **where to write your code** - keep your code in between the areas **ALL YOUR CODE GOES BELOW HERE** and **ALL YOUR CODE GOES ABOVE HERE**. This will help you make less errors. For example:
+By the end of this project, you’ll have built a custom game level that’s ready for action! Your level will include multiple platforms and collectables, and strategic cannons that keep players on their toes. Let’s get started and make something epic! 🚀
 
-```
-////////////////////////////////////////////////////////////////////////
-// ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
+<br><br>
 
-createCollectable(type.steve, 200, 170, 6, 0.7);
+## **Requirements and Grading**
 
-// ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
-```
+| Requirement                     | Description                                                   | Points |
+| ------------------------------- | ------------------------------------------------------------- | ------ |
+| **Create at least 5 platforms** | Platforms should be placed strategically throughout the game  | 30     |
+| **Add 3 collectables**          | Place collectables at various positions using different types | 30     |
+| **Add 3 cannons**               | Place cannons on different sides with varying delays          | 30     |
+| **Design a playable level**     | Create a level that’s challenging but achievable              | 10     |
 
-Code a little, **save your work** (Command / Ctrl + s), switch back to the tab running your game and **refresh the page** (Command / Ctrl + r) to see your work!
+<br><br>
 
-Have fun!
+## **Functions Recap**
 
-## Requirements and Grading
-1. 30% : You must create at least 3 cannons in different locations. 
-2. 30% : You must have at least 3 collectables of different types.
-3. 30% : You must include at least 5 platforms 
-4. 10% : Your game must be playable!
+Functions are reusable blocks of code that perform a specific task. You “call” a function to run the code inside it. Many functions require inputs, known as **_arguments_**, which are the specific values the function uses to perform its task.
 
-<hr> 
+---
 
+### Key Terms
 
-## Functions
-## (Can skip if comfortable with functions)
+<div style="width: 80%; margin: auto;">
 
-Functions are predefined blocks of code that can accept input, perform an action, and can return a value. They can be reused many times to perform that action on command.
+| Term              | Definition                                                                                             |
+| ----------------- | ------------------------------------------------------------------------------------------------------ |
+| **Function Call** | Code that runs the function and gives it any necessary inputs (arguments).                             |
+| **Arguments**     | The actual values you pass into the function when you call it (e.g., `500` for x in `createPlatform`). |
+| **Parameters**    | Placeholders in the function definition that represent the values needed to perform the task.          |
 
-A **Function Declaration** determines what data the function accepts, what operations are performed, and what value is returned. 
+</div>
 
-Here is an example of a Function Declaration called `createCannon`:
+---
 
-```javascript
-function create(x, y, scaleX, scaleY, immovable) {
-    var platform = game.platforms.create(x, y, 'platform');
-    platform.scale.setTo(scaleX || 1, scaleY || 1);
-    platform.body.immovable = immovable || true;
-    return platform;
-}
-```
+### Example
 
-This Function accepts 5 pieces of input data: `(x, y, scaleX, scaleY, immovable)`, called **Parameters**. The Function uses that data to create a platform which is returned by the Function. 
+For example, calling `createPlatform(500, 300, 200, 20);` means:
 
-Function Declaration simply define how a function operates - it does not execute the code until a **Function Call** is made.
+- **500 and 300** are the x and y coordinates where the platform will appear.
+- **200 and 20** are the platform’s width and height.
 
-Here is an example of a function call to the `create` function:
+These numbers are **arguments** passed to the function, matching the **parameters** defined in the function.
 
-```javascript
-createPlatform(400, 200, 1, 2, true);
-```
+<!-- 4 line breaks between TODOs -->
 
-A function call can be made by providing the same headline as the function definition but with actual data values, or **Arguments**, in the place of the parameters. 
-
-Calling the Function tells the computer to jump into the Function Declaration and execute each line written in the `{ Code Block }` replacing each Parameter with an Argument.
-
-This Function call will create a platform with an (x,y) location of `(400, 200)` with an X-Scale-Factor of `1`, ad Y-Scale-Factor of `2`, and the immovable property set to `true`. 
+<br><br><br><br>
 
 # Lesson Steps
-# (Must Read All of this)
 
-## Run the program
-Right click on your `index.html` file and select "Preview with Live Server".
+## **Work Flow: How to Navigate Through the Lesson Steps**
 
-## TODO 1: Platforms
+🎯 **Goal:** Learn how to follow the steps in this lesson to build and customize your game one step at a time.
 
-GOAL: Add as many platforms necessary to make your level challenging.
+---
 
-Find and open the file `js/init/platform.js` and use the the `createPlatform()` Function to create platforms for the level. 
+### Step-by-Step Work Flow
 
-`createPlatform()` takes these arguments: 
+1. 📂 **Open the `platformer.js` file** in your codespace to get started.
+   - 🔍 Locate the file tree (the list of files and folders) in the left panel of your codespace.
+   - Click the `fsd-projects` folder 📂 in your file tree expand the list of projects.
+   - Click on the `platformer` folder 📂 located within the `fsd-projects` folder.
+   - Click on the `platformer.js` file. Coding for all steps will be done in this file.
+2. **Follow the instructions carefully** for each TODO:
 
-```javascript      
-/*
-createPlatform(x, y, scaleX, scaleY);
- 
-x: The x coordinate for the platform.
-y: The y coordinate for the platform.
-scaleX: OPTIONAL The scale factor on the x-axis, this value will stretch the platform in width.
-scaleY: OPTIONAL The scale factor on the y-axis, this value will stretch the platform in height.
-*/
- ```
+   - Pay attention to where new code should be added.
+   - Only code inside the designated areas
+     - Make sure all function calls go between the _`ONLY CHANGE BELOW THIS POINT`_ and _`ONLY CHANGE ABOVE THIS POINT`_ comments.
 
-Here is an example function call:
+3. 🖥️ **Preview your game regularly using Live Server** to see how your changes affect the game level.
+
+---
+
+<table style="width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse; margin-top: 15px; background-color: #2c2c2c; border: 1px solid #444; border-radius: 8px; overflow: hidden;">
+  <tr>
+    <th style="text-align: left; padding: 10px; background-color: #444; color: #e2e2e2; border-bottom: 1px solid #666;">
+      💡 Key Reminders
+    </th>
+  </tr>
+  <tr>
+    <td style="padding: 10px; color: #e2e2e2;">
+      - 📖 Read each step closely before adding any code.<br>
+      - 🖥️ Preview frequently to make sure your game is structured the way you would like it.
+    </td>
+  </tr>
+</table>
+
+---
+
+<br>
+
+### ✅ **Check Your Work!**
+
+- **After each TODO**, double-check your code to ensure it matches the examples.
+- If you encounter issues, **preview your site** using Live Server to troubleshoot.
+
+<!-- 4 line breaks between TODOs -->
+
+<br><br><br><br>
+
+## **TODO 0: Preview Your Site with Live Server**
+
+🎯 **Goal:** Preview your site in the browser to see how it looks and behaves as you make changes.
+
+---
+
+### Step-by-Step Instructions
+
+There are two ways to open your project with **Live Server**:
+
+#### **Option 1: Right-Click Method**
+
+1. 📂 **Find the `index.html` file** in the file tree on the left side of your codespace.
+2. **Right-click on `index.html`** and select **“Open with Live Server.”**
+
+#### **Option 2: Go Live Button in the Bottom Panel**
+
+1. **Look at the bottom-right corner** of your codespace.
+2. **Click the “Go Live” button** to launch Live Server.
+
+<br>
+
+### ✅ **Check Your Work!**
+
+- **After launching Live Server**, your browser should open a new tab with your site.
+- By default, Live Server will always load your home page. To view your platormer game:
+  - Click the link to your Portfolio page to access your project links.
+  - Then navigate to your Platformer project by clicking the Platformer link.
+
+<!-- 4 line breaks between TODOs -->
+
+<br><br><br><br>
+
+## **TODO 1: Enable the Grid**
+
+🎯 **Goal:** Enable the grid in your game to see the x and y coordinates in 100-pixel increments.
+
+---
+
+### Step-by-Step Instructions
+
+1. **Uncomment the `toggleGrid` function**
+
+   - **Find the `toggleGrid()` line in your JavaScript file**. You’ll see it has `//` at the beginning, making it inactive.
+   - Remove `//` to enable the grid in your game.
+
+2. **Check your game in Live Server**
+
+   - Refresh your game to see a grid appear on the screen, marking x and y positions every 100 pixels.
+   - This grid is optional but can be very helpful in placing game items more precisely.
+
+3. **Using Comments to Toggle the Grid**
+   - You can easily enable or disable the grid by commenting out the `toggleGrid()` function call.
+   - Use the **shortcut** `Ctrl + /` (Windows) or `Cmd + /` (Mac) to quickly add or remove `//` from the beginning of the line.
+
+---
+
+<table style="width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse; margin-top: 15px; background-color: #2c2c2c; border: 1px solid #444; border-radius: 8px; overflow: hidden;">
+  <tr>
+    <th style="text-align: left; padding: 10px; background-color: #444; color: #e2e2e2; border-bottom: 1px solid #666;">
+      💡 Why Use the Grid?
+    </th>
+  </tr>
+  <tr>
+    <td style="padding: 10px; color: #e2e2e2;">
+      The grid is a useful guide for precisely placing items in your game. Each gridline marks a 100-pixel increment along the x and y axes, helping you determine specific coordinates. Although it’s not required, it can make designing your level much easier!
+    </td>
+  </tr>
+</table>
+
+---
+
+<br>
+
+### ✅ **Check Your Work!**
+
+- **Preview your game** in Live Server to confirm the grid appears correctly.
+- Experiment with adding and removing the grid to see how it affects your ability to place items.
+
+<!-- 4 line breaks between TODOs -->
+
+<br><br><br><br>
+
+## **TODO 2:** Add _Platforms_
+
+🎯 **Goal:** Add platforms to your game for the player to jump on and navigate the level.
+
+---
+
+### Step-by-Step Instructions
+
+1. 🔍 **Locate the section in your code** where you can add platforms.
+
+   - Add your code below the comment that says `// TODO 2 - Create Platforms`
+   - You’ll be using the `createPlatform` function to set the position and size of each platform.
+
+2. **Understand the Arguments for `createPlatform`**
+
+   - The `createPlatform` function requires several arguments to specify where each platform appears and its dimensions.
+   - Refer to the table below to understand each argument’s purpose:
+
+   <div style="width: 80%; margin: auto;">
+
+| Argument | Description                                                             | Example Value |
+| -------- | ----------------------------------------------------------------------- | ------------- |
+| `x`      | x-coordinate of the platform                                            | `500`         |
+| `y`      | y-coordinate of the platform                                            | `300`         |
+| `width`  | Width of the platform in pixels                                         | `200`         |
+| `height` | Height of the platform in pixels                                        | `20`          |
+| `color`  | (Optional) Color of the platform; will default to grey if not specified | `"hotpink"`   |
+
+   </div>
+
+Example function calls:
 
 ```javascript
-createPlatform(400, 460);           // normal platform
-createPlatform(300, 200, 0.3)       // small horizontal platform (30% the normal width)
-createPlatform(500, 500, 0.3, 10)   // tall vertical wall (30% the normal width and 10x the height)
+createPlatform(500, 0, 20, 290);
+createPlatform(1350, 400, 50, 50, "red");
 ```
 
-<hr> 
+<br>
 
-# Very Important:
-1) In most 2D games, the y-axis is inverted. This means that a y value of 500 is closer to the bottom of your screen than a y value of 100. For examples of what this means, click on the "examples" button below. 
-2) The dimensions of your game world are **900 x 700**, so keep that in mind as you move forward.
+3. **Add at least 5 platforms** in your game by calling `createPlatform` with different arguments.
+   - **Create a new line for each platform**: To add multiple platforms, you’ll need to call createPlatform separately on a new line for each one. Each platform should have its own line of code with its own specific x, y, width, and height values.
+   - Remember, the y-axis is inverted in 2D graphics, so larger `y` values move platforms lower on the screen.
 
-<details> <summary> Examples </summary>
+---
 
-`createPlatform(0, 100)` puts a platform here
+<table style="width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse; margin-top: 15px; background-color: #2c2c2c; border: 1px solid #444; border-radius: 8px; overflow: hidden;">
+  <tr>
+    <th style="text-align: left; padding: 10px; background-color: #444; color: #e2e2e2; border-bottom: 1px solid #666;">
+      💡 Tips for Platform Placement
+    </th>
+  </tr>
+  <tr>
+    <td style="padding: 10px; color: #e2e2e2;">
+      ⚙️ <strong>Use trial and error!</strong> Platforms might not land perfectly on the first try. Adjust the arguments (x, y, width, height) until you’re satisfied with the setup.
+      <br><br>
+      🪜 <strong>Work from the bottom up</strong>: Place your first platforms near the bottom of the game area. Building upward makes it easier to create a path the player can jump between.
+    </td>
+  </tr>
+</table>
 
-<img width=500 src="asset/readme/y_is_100.png">
+---
 
-`createPlatform(0, 500)` puts a platform here
+<br>
 
-<img width=500 src="asset/readme/y_is_500.png">
+### ✅ **Check Your Work!**
 
-</details>
+- **Preview your game** in Live Server to see if the platforms appear as expected.
+- Make sure you have at least 5 platforms placed at different heights and positions.
 
+<!-- 4 line breaks between TODOs -->
 
-## TODO 2: Collectables
+<br><br><br><br>
 
-GOAL: Add as many collectables as necessary (at least 3, and remember they need to be of different types) to make your level challenging.
+## **TODO 3:** Add _Collectables_
 
-Find and open the file `js/init/collectable.js` and use the `createCollectable()` Function to create collectables for the level. 
+🎯 **Goal:** Add items (collectables) for the player to gather while navigating the game.
 
-`createCollectable()` takes these arguments:
+---
 
-```javascript
-/*
-createCollectable(type, x, y, gravity, bounce);
+### Step-by-Step Instructions
 
-type: The type of the collectable. 
-x: The x coordinate for the collectable.
-y: The y coordinate for the collectable.
-gravity: OPTIONAL The gravitational pull on the collectable.
-bounce: OPTIONAL A factor effecting how much the collectable will bounce off platforms, etc.
-*/
-```
+1. 🔍 **Locate the section in your code** designated for adding collectables.
 
-Here is an example function call:
+   - Use the `createCollectable` function to add items at specific locations on the screen.
 
-```javascript
-createCollectable(type.steve, 200, 170, 6, 0.7);
-```
+2. **Understand the Arguments for `createCollectable`**
 
-Below are the following `types` available:
+   - The `createCollectable` function requires arguments that control the item’s type and position.
+   - Refer to the table below for details:
 
-```javascript
-type.db         // worth 10 points
-type.max        // worth 20 points
-type.steve      // worth 30 points
-type.grace      // worth 40 points
-type.kennedi    // worth 50 points
-```
+   <div style="width: 80%; margin: auto;">
 
-<hr> 
+   | Argument  | Description                                                             | Example Value |
+   | --------- | ----------------------------------------------------------------------- | ------------- |
+   | `type`    | The type of collectable (e.g., "database", "diamond")                   | `"diamond"`   |
+   | `x`       | x-coordinate of the collectable                                         | `200`         |
+   | `y`       | y-coordinate of the collectable                                         | `170`         |
+   | `gravity` | (Optional) Controls how the item falls; set to `0` if it shouldn’t fall | `0.5`         |
+   | `bounce`  | (Optional) Controls how much the item bounces when it lands             | `0.7`         |
 
-## TODO 3: Commit Your Working Code
+   </div>
 
-### Important!
+   **Important**: You can use any of the following values for your `type`: `"database"`, `"diamond"`, `"grace"`, `"kennedi"`, `"max"`, and `"steve"`
 
-In the first website and portfolio projects, you ran three git commands - `git add`, `git commit`, and `git push`- at the end of each project, and your code magically appeared on the internet on your own personal website. How exactly did that happen, and what is git?
+   ***
 
-### Git
+   Example function calls:
 
-Git is a software used for tracking changes to files and managing and controlling different versions of the same file. Git is a commonly used software for developers, and is frequently used throughout projects when changes to code are made and new features are implemented. Github uses Git to help keep track of changes to code, and when you use the `git push` command, all of the commits you have made using `git commit` are sent to Github to keep track of.
+   ```javascript
+   createCollectable("steve", 1350, 50);
+   createCollectable("diamond", 200, 170, 0.5, 0.7);
+   ```
 
-#### Note
+<br>
 
-You've probably heard someone say you should always back up your computer to preserve anything in case it randomly decides to crash? Running these git commands is essentially the same thing! If anything should happen to your workspace and your work gets deleted, Github saves a copy of all your work whenever you run these commands. "Git" into the habit of running these commands every day in your workspace when you are coding -- it is always better to over commit than under commit!
+3. **Add at least 3 collectables** at different positions throughout your game. Use different `type` values to add variety.
 
-For this project and future projects, you'll commit and push work more frequently to better manage your workflow and track changes to your code.
+---
 
-In your bash terminal, enter the following commands, pressing ENTER after each one.
+<table style="width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse; margin-top: 15px; background-color: #2c2c2c; border: 1px solid #444; border-radius: 8px; overflow: hidden;">
+  <tr>
+    <th style="text-align: left; padding: 10px; background-color: #444; color: #e2e2e2; border-bottom: 1px solid #666;">
+      💡 Tips for Placing Collectables
+    </th>
+  </tr>
+  <tr>
+    <td style="padding: 10px; color: #e2e2e2;">
+      💎 <strong>Experiment with positioning</strong>: Test different x and y values to place items at reachable spots. Adjust as needed so that the collectables are accessible.<br><br>
+      🔄 <strong>Use gravity and bounce carefully</strong>: These are optional values. Start with <code>0</code> if you want a stationary item, and increase them slightly to add movement or challenge. Using <code>1</code> for both values will make your object bounce to the same height each time.
+    </td>
+  </tr>
+</table>
 
-`git add .`
+---
 
-`git commit -m 'add platforms and collectables to game'`
+<br>
 
-<ul> <li style="list-style-type: none;">
-A note about `git commit` - When you save a document on your computer, you usually give your document a title so you can find it later. The same applies with a `git commit` command - the message identifies different versions of your file. In between the quotes, you always want to include a short description of why you are pushing your code to Github - whether it's saying 'adding platforms', 'adding cannons', or simply a message saying 'My teacher told me to commit so I do not lose my work' would work!
-</li></ul>
+### ✅ **Check Your Work!**
 
-`git push`
+- **Preview your game** in Live Server to ensure the collectables appear where you expect them.
+- Make sure you have at least 3 collectables, with different types if possible.
+
+<!-- 4 line breaks between TODOs -->
+
+<br><br><br><br>
+
+## **TODO 4:** Add _Cannons_
+
+🎯 **Goal:** Add cannons to your game to introduce obstacles for the player.
+
+---
+
+### Step-by-Step Instructions
+
+1. 🔍 **Locate the section in your code** for adding cannons.
+
+   - Use the `createCannon` function to place each cannon along the screen edges.
+
+2. **Understand the Arguments for `createCannon`**
+
+   - The `createCannon` function has arguments for placement and firing speed. Review the table for details:
+
+   <div style="width: 80%; margin: auto;">
+
+   | Argument   | Description                                                     | Example Value |
+   | ---------- | --------------------------------------------------------------- | ------------- |
+   | `side`     | Which side of the screen to place the cannon (left, right, top) | `"left"`      |
+   | `position` | Position along the side (distance from top or left)             | `300`         |
+   | `delay`    | Time in milliseconds between shots                              | `2000`        |
+
+   </div>
+
+   **Important**: You can use any of the following string values for your `side`: `"top"`, `"bottom"`, `"left"`, or `"right"`
+
+   ***
+
+   Example function calls:
+
+   ```javascript
+   createCannon("top", 200, 100);
+   createCannon("right", 300, 2000);
+   ```
+
+<br>
+
+3. **Add at least 3 cannons** on different sides of the screen. Adjust their positions and delays to vary the difficulty.
+
+---
+
+<table style="width: 80%; margin-left: auto; margin-right: auto; border-collapse: collapse; margin-top: 15px; background-color: #2c2c2c; border: 1px solid #444; border-radius: 8px; overflow: hidden;">
+  <tr>
+    <th style="text-align: left; padding: 10px; background-color: #444; color: #e2e2e2; border-bottom: 1px solid #666;">
+      💡 Tips for Placing Cannons
+    </th>
+  </tr>
+  <tr>
+    <td style="padding: 10px; color: #e2e2e2;">
+      🔄 <strong>Try different sides:</strong> Place cannons on the left, right, and top to create diverse challenges.<br><br>
+      ⏲️ <strong>Adjust delay times:</strong> Faster delays increase difficulty. Start with longer delays and adjust as needed to create the right level of challenge.<br><br>
+      🎯 <strong>Position thoughtfully:</strong> Place cannons where they can cover areas the player frequently jumps to.
+    </td>
+  </tr>
+</table>
+
+---
+
+### ✅ **Check Your Work!**
+
+- **Preview your game** in Live Server to make sure the cannons are firing correctly.
+- Ensure you have at least 3 cannons placed on different sides with varying delay intervals.
+
+<!-- 4 line breaks between TODOs -->
+
+<br><br><br><br>
+
+## **TODO 5:** _Make your level challenging!_
+
+Make sure your game unique and challenging! In order to get full credit your project must be playable! Specifically,
+
+- HalleBot can access all collectables.
+- There are platforms of varying heights that require jumping or avoiding obstacles.
+- Cannons are placed to create a challenge.
+
+<!-- 4 line breaks between TODOs -->
+
+<br><br><br><br>
+
+## **TODO 6:** _Go Live_
+
+🎯 **Goal:** Push your changes to GitHub and make your platformer game go live.
+
+---
+
+### Step-by-Step Instructions
+
+1. **Ensure the grid is not visible**
+
+   - If you used the grid to help build your game, make sure you disable it before saving your work. The grid is a tool for developers to place items accurately, but it can distract people (or dogs) who are playing your game.
+   - To remove the grid, find the `toggleGrid()` function call underneath the `// TODO 1 - Enable the Grid` comment. Add two slashes (`//`) in front of the `toggleGrid` function call to disable that line of code.
+
+2. **Open the terminal in your codespace**
+
+   - If the terminal isn’t visible, click the **Hamburger Menu > Terminal > New Terminal**.
+
+3. **Run the required git commands one by one** in the terminal, pressing enter after each command to run it. Reference the table and comment below for how to run the three commands:
+
+| Command                                     | Purpose                                                     |
+| ------------------------------------------- | ----------------------------------------------------------- |
+| `git add .`                                 | Stages all your changes so Git is aware of them.            |
+| `git commit -m "Finalized platformer game"` | Saves a version of your work with a brief message.          |
+| `git push`                                  | Uploads your committed changes to GitHub, making them live. |
+
+<br>
+
+4. **Wait a few minutes for the changes to go live at your-username.github.io.**
+
+---
+
+<br>
+
+### ✅ **Check Your Work!**
+
+- Visit the site `your-github-username.github.io` to see your platformer game live on the internet.
+  - Make sure to replace the text `"your-github-username"` with your actual github username when entering the URL in your browser.
+- Navigate to your Platformer link on your Portfolio page to ensure it is live on the web.
+  - You might need to refresh your page for your changes to appear.
+
+<br>
 
 <hr>
 
-## TODO 4: Cannons
+<br>
 
-GOAL: Add as many cannons as necessary (at least 3) to make your level challenging. 
-
-Find and open the file `js/init/cannon.js` and use the `createCannon` Function to create cannons for the level. The `createCannon` Function takes these arguments:
-
-```javascript
-/*
-createCannon(type, position, delay);
-
-type: The type of cannon to be made. This can be one of the following Strings: "top", "bottom", "left", or "right"
-position: The position coordinate for the cannon along the wall it is placed.
-delay: OPTIONAL The number of milliseconds to wait before firing the first projectile
-
-*/
-```
-
-Here is an example function call:
-
-```javascript
-createCannon("top", 450); // a cannon on the top of the screen, located at x = 450
-createCannon("left", 300, 1000); // a cannon on the left side of the screen, located at y = 300, with a 1 second delay (1000ms)
-```
-<hr> 
-
-### WARNING
-**Placing the cannons outside of bounds of the game will cause it to crash instantly!**
-
-## TODO 5: Make your level challenging!
-
-Now that you have platforms, cannons, and collectables make your game unique and challenging! In order to get full credit your project must be playable! Specifically, 
-* It must be possible to collect all collectables
-* It must require changing height to reach at least some collectables (jumping, falling, or a combination)
-* It must require active avoidance of cannon projectiles (i.e. you can't put all cannons in a corner)
-
-###
-
-<hr>
-
-## TODO 6: Go Live
-
-In your bash terminal, enter the following commands, pressing ENTER after each one:
-
-`git add .`
-
-`git commit -m 'add cannons to game'`
-
-`git push`
-
-Give it a couple minutes and you should be able to view the additions to your website live on the web at `username.github.io` (Where `username` is your own GitHub username.)
-
-Great work! Pat yourselve on the back and show off your game!
+### 🎉🎉🎉 Congratulations! You can now challenge your classmates and friends to beat your customized game! 🎉🎉🎉
