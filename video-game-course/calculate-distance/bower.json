@@ -3,13 +3,22 @@
   "version": "0.0.1",
   "description": "Calculating distance",
   "main": "index.html",
-  "authors": ["jfraboni"],
+  "authors": [
+    "jfraboni"
+  ],
   "license": "Copywrite Operation Spark",
   "homepage": "",
   "private": true,
-  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
     "EaselJS": "^1.0.2",
-    "V6": "^0.0.2"
+    "V6": "^0.0.2",
+    "GameCache": "https://github.com/gregthompson27/GameCache.git#^1.1.0"
   }
 }

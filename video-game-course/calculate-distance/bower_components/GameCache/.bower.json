@@ -1,0 +1,28 @@
+{
+  "name": "GameCache",
+  "main": "index.js",
+  "homepage": "https://github.com/gregthompson27/GameCache",
+  "authors": [
+    "Greg Thompson <gregthompson27@gmail.com>"
+  ],
+  "description": "gaming library for vgp",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "1.1.0",
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.0",
+    "commit": "7f2bb2494b0b3c91c9c5341cbcbdac41d9e7d9ef"
+  },
+  "_source": "https://github.com/gregthompson27/GameCache.git",
+  "_target": "^1.1.0",
+  "_originalSource": "https://github.com/gregthompson27/GameCache.git",
+  "_direct": true
+}
