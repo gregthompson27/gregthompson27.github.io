@@ -429,7 +429,7 @@ function toggleGrid() {
 function drawGrid() {
   // vertical grid lines
   for (let i = 100; i < canvas.width; i += 100) {
-    createPlatform(i, canvas.height, -1, -canvas.height + 35);
+    createPlatform(i, canvas.height, -1, -canvas.height + 35, "#a2a2a2");
     // add text indicating x value at top of game
     ctx.font = "125% serif";
     ctx.fillText(
@@ -441,7 +441,7 @@ function drawGrid() {
 
   // horizontal grid lines
   for (let i = 100; i < canvas.height; i += 100) {
-    createPlatform(canvas.width, i, -canvas.width + 45, -1);
+    createPlatform(canvas.width, i, -canvas.width + 45, -1, "#a2a2a2");
     // add text indicating y value at left side of game
     ctx.font = "125% serif";
     ctx.fillText(
