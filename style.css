@@ -1,0 +1,76 @@
+body {
+                background: #3460a1;
+                color: #f7f4f4;
+                padding: 10px;
+                font-family: arial;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+
+            /* navigation menu */
+            nav {
+                background: #aba24a;
+                margin: 0 auto;
+                display: flex;
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+            h1 {
+                display: flex;
+                align-items: center;
+                color: #f7f4f4;
+                flex: 1;
+                margin: 0;
+            }
+            #nav-ul {
+                list-style-image: none;
+            }
+            .nav-li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            a {
+                text-decoration: none;
+                color: #f7f4f4;
+            }
+
+            /* main container area beneath menu */
+            main {
+                background: #65abca;
+                display: flex;
+                color: #f7f4f4;
+                border-radius: 5px;
+                box-shadow: 3px 3px 8px #8888cc;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            /* portfolio styles */
+            .content h1 {
+                color: #f7f4f4;
+            }
+            
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            #portfolio li {
+                background: #f7f4f4;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
+            }
