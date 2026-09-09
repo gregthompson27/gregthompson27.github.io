@@ -1,3 +1,4 @@
+console.log('setting up platformer.js...');
 // setup variables
 const walkAcceleration = 2.5; // how much is added to the speed each frame
 const gravity = 0.5; // how much is subtracted from speedY each frame
