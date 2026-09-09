@@ -983,5 +983,5 @@ function handleKeyUp(e) {
 }
 
 function loadJson() {
-  getJSON("https://raw.githubusercontent.com/gregthompson27/gregthompson27.github.io/refs/heads/main/fsd-projects/platformer/halle.json", JsonFunction); //runs this before the setup because of timing things
+  getJSON("https://gregthompson27.github.io/fsd-projects/platformer/halle.json", JsonFunction); //runs this before the setup because of timing things
 }
